@@ -154,6 +154,7 @@ header.scrolled{background:rgba(14,14,17,.82);backdrop-filter:blur(14px);border-
 .proj-cover.c2{background:linear-gradient(135deg,#0b2233,#123a2c)}
 .proj-cover .big-ico{width:76px;height:76px;color:var(--accent);opacity:.9}
 .proj-cover .big-ico svg{width:100%;height:100%}
+.proj-cover .proj-logo{position:relative;z-index:2;height:120px;width:120px;object-fit:contain;background:#fff;border-radius:18px;padding:12px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .proj-cover .pattern-mini{position:absolute;inset:0;opacity:.08;background-size:120px}
 .proj-badge{position:absolute;top:14px;right:14px;background:var(--accent);color:#141414;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.5px}
 .proj-body{padding:26px;flex:1;display:flex;flex-direction:column}
@@ -168,6 +169,7 @@ header.scrolled{background:rgba(14,14,17,.82);backdrop-filter:blur(14px);border-
 .proj-link:hover svg{transform:translate(3px,-3px)}
 .proj-cover.c3{background:linear-gradient(135deg,#1a1230,#3a1c4a)}
 .proj-cover.c4{background:linear-gradient(135deg,#07222b,#0d3a3a)}
+.proj-cover.c5{background:linear-gradient(135deg,#071a2b,#13324a)}
 
 /* ---------- Timeline ---------- */
 #parcours{background:var(--bg-2)}
@@ -339,7 +341,7 @@ footer p{color:var(--muted);font-size:13.5px}
         <div class="stats" style="margin-top:22px">
           <div class="stat"><div class="num" data-count="5">0</div><div class="lbl">Années d'études</div></div>
           <div class="stat"><div class="num" data-count="8">0</div><div class="lbl">Technologies</div></div>
-          <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">Projets réalisés</div></div>
+          <div class="stat"><div class="num" data-count="5">0</div><div class="lbl">Projets réalisés</div></div>
         </div>
       </div>
     </div>
@@ -379,8 +381,19 @@ footer p{color:var(--muted);font-size:13.5px}
     <div class="sec-head reveal"><div class="sec-tag">Réalisations</div><h2>Projets phares</h2><div class="bar"></div></div>
     <div class="proj-grid">
       <div class="proj reveal">
+        <div class="proj-cover c5"><div class="pattern-mini" id="pm5"></div><span class="proj-badge">Orange Summer Challenge</span>
+          <img src="assets/retinascan-logo.webp" alt="Logo RetinaScan" class="proj-logo" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-date">Juillet – Septembre 2026 · Orange Summer Challenge</div>
+          <h3>RetinaScan</h3>
+          <p><em>« Voir au-delà, diagnostiquer avec précision. »</em> Assistant ophtalmologique intelligent et complet, fonctionnant 100&nbsp;% hors-ligne. L'application permet de prendre une photo de la rétine, qui est aussitôt analysée et diagnostiquée par l'intelligence artificielle embarquée — pour un dépistage rapide et précis, même sans connexion internet.</p>
+          <div class="tags"><span class="tag">IA embarquée</span><span class="tag">Vision par ordinateur</span><span class="tag">Offline</span><span class="tag">Santé</span><span class="tag">Mobile</span></div>
+        </div>
+      </div>
+      <div class="proj reveal d2">
         <div class="proj-cover c1"><div class="pattern-mini" id="pm1"></div><span class="proj-badge">À la une</span>
-          <div class="big-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="12" rx="2"/><circle cx="12" cy="15" r="2"/></svg></div>
+          <img src="assets/senefamou-logo.png" alt="Logo Senefamou" class="proj-logo" loading="lazy">
         </div>
         <div class="proj-body">
           <div class="proj-date">Novembre 2025 · Projet de fin de formation</div>
@@ -439,7 +452,7 @@ footer p{color:var(--muted);font-size:13.5px}
     <div class="timeline">
       <div class="tl-item reveal"><div class="dot"></div><div class="tl-card">
         <div class="tl-date">Juillet – Septembre 2026</div><h3>Orange Summer Challenge</h3>
-        <div class="org">Orange · En cours</div><p>Participation au programme d'innovation et d'entrepreneuriat d'Orange : conception et développement d'un projet en équipe pluridisciplinaire.</p>
+        <div class="org">Orange · Projet RetinaScan</div><p>Programme d'innovation et d'entrepreneuriat d'Orange, concrétisé en équipe pluridisciplinaire par <strong>RetinaScan</strong> — un assistant ophtalmologique intelligent et hors-ligne qui photographie la rétine et la diagnostique grâce à l'IA. Slogan : « Voir au-delà, diagnostiquer avec précision. »</p>
       </div></div>
       <div class="tl-item reveal"><div class="dot"></div><div class="tl-card">
         <div class="tl-date">Février – Décembre 2025</div><h3>Développement Web/Mobile Full-Stack</h3>
@@ -516,7 +529,7 @@ footer p{color:var(--muted);font-size:13.5px}
 const pat = "data:image/svg+xml;utf8," + encodeURIComponent(
   "<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><g fill='none' stroke='%23f4a900' stroke-width='2'><path d='M0 90h180M90 0v180'/><path d='M45 45l45 45 45-45M45 135l45-45 45 45'/><circle cx='90' cy='90' r='10'/><path d='M20 20l12 0 0 12M160 20l-12 0 0 12M20 160l12 0 0-12M160 160l-12 0 0-12'/></g></svg>");
 document.getElementById('pattern').style.backgroundImage = "url(\""+pat+"\")";
-['pm1','pm2','pm3','pm4'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.backgroundImage="url(\""+pat+"\")";});
+['pm1','pm2','pm3','pm4','pm5'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.backgroundImage="url(\""+pat+"\")";});
 
 // Preloader
 window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('loader').classList.add('hide'),650); });
